@@ -4,4 +4,4 @@ The project compiles class and interface definitions required by both REST API s
 
 ## Contents
 - `com.turygin.api.model` package contains DTO class definitions, for example, `CourseDTO` which contains the course information.
-- `com.turygin.api.repository` package contains repository interface definitions, for example, `ICourseRepository` which describes available endpoints for course manipulation.
+- `com.turygin.api.resource` package contains repository interface definitions, for example, `ICourseRepository` which describes available endpoints for course manipulation.

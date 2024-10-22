@@ -1,26 +1,26 @@
-package com.turygin.api.repository;
+package com.turygin.api.resource;
 
-import com.turygin.api.model.CourseDTO;
+import com.turygin.api.model.CourseBasicDTO;
 
 import java.util.List;
 
 /**
- * Interface that defines a course repository and describes
+ * Interface that defines a course resource and describes
  * the actions that can be performed on courses.
  */
-public interface ICourseRepository {
+public interface ICourseResource {
 
     /**
      * Fetches course data by course unique ID.
      * @param id unique course ID
      * @return information about the course
      */
-    CourseDTO getCourse(long id);
+    CourseBasicDTO getCourse(long id);
 
     /**
      * Fetches information about all available courses.
      * @return a list of course information objects
      */
-    List<CourseDTO> getAllCourses();
+    List<CourseBasicDTO> getAllCourses();
 }
 
