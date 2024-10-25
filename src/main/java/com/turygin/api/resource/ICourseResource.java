@@ -1,7 +1,6 @@
 package com.turygin.api.resource;
 
 import com.turygin.api.model.CourseBasicDTO;
-import com.turygin.api.model.CourseSearchParams;
 
 import java.util.List;
 
@@ -26,9 +25,10 @@ public interface ICourseResource {
 
     /**
      * Searches for courses based on parameters provided.
-     * @param params search parameters
+     * @param title partial course title (case-insensitive)
+     * @param departmentId departmentId
      * @return a list of courses that satisfy the search criteria
      */
-    List<CourseBasicDTO> findCourses(CourseSearchParams params);
+    List<CourseBasicDTO> findCourses(String title, long departmentId);
 }
 
