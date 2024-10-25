@@ -4,9 +4,7 @@ package com.turygin.api.model;
  * Sample course information data transfer object.
  * These will be tailored to WebApp needs.
  */
-public class CourseBasicDTO {
-
-    private long id;
+public class CourseBasicDTO extends WithIdDTO {
 
     /** Unique course code, e.g. CS 101. */
     private String code;
@@ -20,36 +18,18 @@ public class CourseBasicDTO {
     /** Number of credits. */
     private int credits;
 
-    /** Empty constructor. */
-    public CourseBasicDTO() {}
-
     /**
      * Instantiates CourseDTO object.
      * @param code unique course code
      * @param title course title
      */
     public CourseBasicDTO(long id, String code, String title, String description, int credits) {
+        super();
         this.id = id;
         this.code = code;
         this.title = title;
         this.description = description;
         this.credits = credits;
-    }
-
-    /**
-     * Gets id.
-     * @return the id
-     */
-    public long getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     * @param id the id
-     */
-    public void setId(long id) {
-        this.id = id;
     }
 
     /**
