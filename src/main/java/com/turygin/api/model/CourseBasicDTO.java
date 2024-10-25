@@ -20,8 +20,11 @@ public class CourseBasicDTO extends WithIdDTO {
 
     /**
      * Instantiates CourseDTO object.
-     * @param code unique course code
+     * @param id unique course code
+     * @param code course code
      * @param title course title
+     * @param description course description
+     * @param credits number of course credits
      */
     public CourseBasicDTO(long id, String code, String title, String description, int credits) {
         super();
