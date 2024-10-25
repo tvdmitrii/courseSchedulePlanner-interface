@@ -8,6 +8,19 @@ public class DepartmentBasicDTO extends WithIdDTO {
     private String name;
 
     /**
+     * Instantiates DepartmentBasicDTO object.
+     * @param id unique department id
+     * @param code department unique code
+     * @param name department name
+     */
+    public DepartmentBasicDTO(long id, String code, String name) {
+        super();
+        this.id = id;
+        this.code = code;
+        this.name = name;
+    }
+
+    /**
      * Gets code.
      * @return the code
      */
