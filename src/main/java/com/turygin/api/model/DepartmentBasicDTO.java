@@ -7,6 +7,9 @@ public class DepartmentBasicDTO extends WithIdDTO {
     /** Department name. */
     private String name;
 
+    /** Default constructor. */
+    public DepartmentBasicDTO(){}
+
     /**
      * Instantiates DepartmentBasicDTO object.
      * @param id unique department id

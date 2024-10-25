@@ -6,6 +6,9 @@ package com.turygin.api.model;
 public class WithIdDTO {
     protected long id;
 
+    /** Default constructor. */
+    public WithIdDTO(){}
+
     /**
      * Gets id.
      * @return the id

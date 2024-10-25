@@ -18,6 +18,9 @@ public class CourseBasicDTO extends WithIdDTO {
     /** Number of credits. */
     private int credits;
 
+    /** Default constructor. */
+    public CourseBasicDTO(){}
+
     /**
      * Instantiates CourseDTO object.
      * @param id unique course code
