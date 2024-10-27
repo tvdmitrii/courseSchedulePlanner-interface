@@ -19,7 +19,9 @@ public class CourseBasicDTO extends WithIdDTO {
     private int credits;
 
     /** Default constructor. */
-    public CourseBasicDTO(){}
+    public CourseBasicDTO(){
+        super();
+    }
 
     /**
      * Instantiates CourseDTO object.
