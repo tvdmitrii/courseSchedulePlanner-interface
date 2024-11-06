@@ -8,5 +8,5 @@ public interface ICartResourse {
     List<CourseWithSectionsDTO> cartGetCourses(long userId);
     void cartAddCourseToCart(long userId, long courseId);
     void cartRemoveCourse(long userId, long courseId);
-    void cartUpdateCourse(long userId, long courseId, List<Long> sectionIds);
+    CourseWithSectionsDTO cartUpdateCourse(long userId, long courseId, List<Long> sectionIds);
 }
