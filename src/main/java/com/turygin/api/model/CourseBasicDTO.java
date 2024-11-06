@@ -7,16 +7,16 @@ package com.turygin.api.model;
 public class CourseBasicDTO extends WithIdDTO {
 
     /** Unique course code, e.g. CS 101. */
-    private String code;
+    protected String code;
 
     /** Course title. */
-    private String title;
+    protected String title;
 
     /** Course description. */
-    private String description;
+    protected String description;
 
     /** Number of credits. */
-    private int credits;
+    protected int credits;
 
     /** Default constructor. */
     public CourseBasicDTO(){
