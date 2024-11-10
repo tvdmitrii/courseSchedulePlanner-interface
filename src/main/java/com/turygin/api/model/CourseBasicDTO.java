@@ -18,6 +18,12 @@ public class CourseBasicDTO extends WithIdDTO {
     /** Number of credits. */
     protected int credits;
 
+    /** ID of the associated department. */
+    protected Long departmentId;
+
+    /** Course number.*/
+    protected int number;
+
     /** Default constructor. */
     public CourseBasicDTO(){
         super();
@@ -30,14 +36,18 @@ public class CourseBasicDTO extends WithIdDTO {
      * @param title course title
      * @param description course description
      * @param credits number of course credits
+     * @param departmentId ID of the associated department
+     * @param number course number
      */
-    public CourseBasicDTO(long id, String code, String title, String description, int credits) {
+    public CourseBasicDTO(long id, String code, String title, String description, int credits, Long departmentId, int number) {
         super();
         this.id = id;
         this.code = code;
         this.title = title;
         this.description = description;
         this.credits = credits;
+        this.departmentId = departmentId;
+        this.number = number;
     }
 
     /**
@@ -102,5 +112,37 @@ public class CourseBasicDTO extends WithIdDTO {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * Gets department ID.
+     * @return department ID
+     */
+    public Long getDepartmentId() {
+        return departmentId;
+    }
+
+    /**
+     * Sets department ID
+     * @param departmentId department ID
+     */
+    public void setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    /**
+     * Gets course number.
+     * @return course number
+     */
+    public int getNumber() {
+        return number;
+    }
+
+    /**
+     * Sets course number.
+     * @param number course number
+     */
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

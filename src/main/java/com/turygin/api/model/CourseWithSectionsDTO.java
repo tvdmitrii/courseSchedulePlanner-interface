@@ -12,11 +12,8 @@ public class CourseWithSectionsDTO extends CourseBasicDTO {
     }
 
     public CourseWithSectionsDTO(CourseBasicDTO course) {
-        super(course.getId(), course.getCode(), course.getTitle(), course.getDescription(), course.getCredits());
-    }
-
-    public CourseWithSectionsDTO(long id, String code, String title, String description, int credits) {
-        super(id, code, title, description, credits);
+        super(course.getId(), course.getCode(), course.getTitle(), course.getDescription(), course.getCredits(),
+                course.getDepartmentId(), course.getNumber());
     }
 
     public SortedMap<Long,SectionDTO> getSections() {
