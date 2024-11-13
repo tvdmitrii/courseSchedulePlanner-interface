@@ -145,4 +145,25 @@ public class CourseBasicDTO extends WithIdDTO {
     public void setNumber(int number) {
         this.number = number;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("CourseBasicDTO {id=");
+        builder.append(id);
+        builder.append(", code=");
+        builder.append(code);
+        builder.append(", title=");
+        builder.append(title);
+        builder.append(", description=");
+        builder.append(description);
+        builder.append(", credits=");
+        builder.append(credits);
+        builder.append(", departmentId=");
+        builder.append(departmentId);
+        builder.append(", number=");
+        builder.append(number);
+        builder.append("}");
+        return builder.toString();
+    }
 }

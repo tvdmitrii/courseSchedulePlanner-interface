@@ -30,5 +30,11 @@ public interface ICourseResource {
      * @return a list of courses that satisfy the search criteria
      */
     List<CourseBasicDTO> findCourses(String title, long departmentId);
+
+    void deleteCourse(long courseId);
+
+    CourseBasicDTO addCourse(CourseBasicDTO course);
+
+    CourseBasicDTO updateCourse(CourseBasicDTO course);
 }
 
