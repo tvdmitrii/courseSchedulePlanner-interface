@@ -2,10 +2,7 @@ package com.turygin.api.resource;
 
 import com.turygin.api.model.UserDTO;
 
-/**
- * Interface that defines a user resource and describes
- * the actions that can be performed on users.
- */
+/** API resource interface for interacting with users. */
 public interface IUserResource {
 
     /**

@@ -1,5 +1,6 @@
 package com.turygin.api.model;
 
+/** Represents a user DTO. */
 public class UserDTO extends WithIdDTO {
 
     /** Indicates whether this is a new user. */
@@ -20,8 +21,7 @@ public class UserDTO extends WithIdDTO {
      * @param isAdmin indicates whether the user has administrator privileges
      */
     public UserDTO(long id, boolean isNewUser, boolean isAdmin) {
-        super();
-        this.id = id;
+        super(id);
         this.isNewUser = isNewUser;
         this.isAdmin = isAdmin;
     }
@@ -56,5 +56,22 @@ public class UserDTO extends WithIdDTO {
      */
     public void setNewUser(boolean newUser) {
         isNewUser = newUser;
+    }
+
+    /**
+     * Creates a string representation of the instance.
+     * @return a string describing the user
+     */
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("UserDTO {id=");
+        builder.append(id);
+        builder.append(", isNewUser=");
+        builder.append(isNewUser);
+        builder.append(", isAdmin=");
+        builder.append(isAdmin);
+        builder.append("}");
+        return builder.toString();
     }
 }

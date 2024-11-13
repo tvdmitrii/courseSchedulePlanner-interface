@@ -1,27 +1,24 @@
 package com.turygin.api.resource;
 
-import com.turygin.api.model.CourseBasicDTO;
+import com.turygin.api.model.CourseDTO;
 
 import java.util.List;
 
-/**
- * Interface that defines a course resource and describes
- * the actions that can be performed on courses.
- */
+/** API resource interface for interacting with courses. */
 public interface ICourseResource {
 
     /**
-     * Fetches course data by course unique ID.
+     * Fetches course data by course ID.
      * @param id unique course ID
      * @return information about the course
      */
-    CourseBasicDTO getCourse(long id);
+    CourseDTO getCourse(long id);
 
     /**
      * Fetches information about all available courses.
      * @return a list of course information objects
      */
-    List<CourseBasicDTO> getAllCourses();
+    List<CourseDTO> getAllCourses();
 
     /**
      * Searches for courses based on parameters provided.
@@ -29,12 +26,26 @@ public interface ICourseResource {
      * @param departmentId departmentId
      * @return a list of courses that satisfy the search criteria
      */
-    List<CourseBasicDTO> findCourses(String title, long departmentId);
+    List<CourseDTO> findCourses(String title, long departmentId);
 
+    /**
+     * Removes a course.
+     * @param courseId course ID
+     */
     void deleteCourse(long courseId);
 
-    CourseBasicDTO addCourse(CourseBasicDTO course);
+    /**
+     * Adds a new course.
+     * @param course course object
+     * @return newly added course information
+     */
+    CourseDTO addCourse(CourseDTO course);
 
-    CourseBasicDTO updateCourse(CourseBasicDTO course);
+    /**
+     * Updates course.
+     * @param course course information, including ID
+     * @return updated course information
+     */
+    CourseDTO updateCourse(CourseDTO course);
 }
 

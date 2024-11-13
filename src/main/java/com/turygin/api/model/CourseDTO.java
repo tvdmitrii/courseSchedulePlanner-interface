@@ -1,13 +1,10 @@
 package com.turygin.api.model;
 
 /**
- * Sample course information data transfer object.
- * These will be tailored to WebApp needs.
+ * Course information data transfer object.
+ * Does not contain section information.
  */
-public class CourseBasicDTO extends WithIdDTO {
-
-    /** Unique course code, e.g. CS 101. */
-    protected String code;
+public class CourseDTO extends WithIdDTO {
 
     /** Course title. */
     protected String title;
@@ -18,36 +15,47 @@ public class CourseBasicDTO extends WithIdDTO {
     /** Number of credits. */
     protected int credits;
 
-    /** ID of the associated department. */
-    protected Long departmentId;
-
     /** Course number.*/
     protected int number;
 
+    /** Associated department. */
+    protected DepartmentDTO department;
+
     /** Default constructor. */
-    public CourseBasicDTO(){
+    public CourseDTO(){
         super();
     }
 
     /**
      * Instantiates CourseDTO object.
      * @param id unique course code
-     * @param code course code
      * @param title course title
      * @param description course description
      * @param credits number of course credits
-     * @param departmentId ID of the associated department
      * @param number course number
+     * @param department associated department DTO
      */
-    public CourseBasicDTO(long id, String code, String title, String description, int credits, Long departmentId, int number) {
-        super();
-        this.id = id;
-        this.code = code;
+    public CourseDTO(long id, String title, String description, int credits, int number,
+                     DepartmentDTO department) {
+        super(id);
         this.title = title;
         this.description = description;
         this.credits = credits;
-        this.departmentId = departmentId;
         this.number = number;
+        this.department = department;
+    }
+
+    /**
+     * Copy constructor.
+     * @param courseDTO course to copy
+     */
+    public CourseDTO(CourseDTO courseDTO) {
+        super(courseDTO.getId());
+        this.title = courseDTO.getTitle();
+        this.description = courseDTO.getDescription();
+        this.credits = courseDTO.getCredits();
+        this.number = courseDTO.getNumber();
+        this.department = courseDTO.getDepartment();
     }
 
     /**
@@ -67,19 +75,11 @@ public class CourseBasicDTO extends WithIdDTO {
     }
 
     /**
-     * Gets code.
-     * @return the code
+     * Constructs course code.
+     * @return the course code
      */
     public String getCode() {
-        return code;
-    }
-
-    /**
-     * Sets code.
-     * @param code the code
-     */
-    public void setCode(String code) {
-        this.code = code;
+        return department != null ? String.format("%s %d", department.getCode(), number) : "";
     }
 
     /**
@@ -115,19 +115,19 @@ public class CourseBasicDTO extends WithIdDTO {
     }
 
     /**
-     * Gets department ID.
-     * @return department ID
+     * Gets department.
+     * @return department
      */
-    public Long getDepartmentId() {
-        return departmentId;
+    public DepartmentDTO getDepartment() {
+        return department;
     }
 
     /**
-     * Sets department ID
-     * @param departmentId department ID
+     * Sets department.
+     * @param department department DTO
      */
-    public void setDepartmentId(Long departmentId) {
-        this.departmentId = departmentId;
+    public void setDepartment(DepartmentDTO department) {
+        this.department = department;
     }
 
     /**
@@ -146,23 +146,25 @@ public class CourseBasicDTO extends WithIdDTO {
         this.number = number;
     }
 
+    /**
+     * Creates a string representation of the instance.
+     * @return a string describing the course
+     */
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("CourseBasicDTO {id=");
         builder.append(id);
-        builder.append(", code=");
-        builder.append(code);
         builder.append(", title=");
         builder.append(title);
         builder.append(", description=");
         builder.append(description);
         builder.append(", credits=");
         builder.append(credits);
-        builder.append(", departmentId=");
-        builder.append(departmentId);
         builder.append(", number=");
         builder.append(number);
+        builder.append(", department=");
+        builder.append(department != null ? department.toString(): "{}");
         builder.append("}");
         return builder.toString();
     }

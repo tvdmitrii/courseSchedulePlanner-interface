@@ -1,13 +1,10 @@
 package com.turygin.api.resource;
 
-import com.turygin.api.model.DepartmentBasicDTO;
+import com.turygin.api.model.DepartmentDTO;
 
 import java.util.List;
 
-/**
- * Interface that defines a department resource and describes
- * the actions that can be performed on departments.
- */
+/** API resource interface for interacting with departments. */
 public interface IDepartmentResource {
 
     /**
@@ -15,11 +12,11 @@ public interface IDepartmentResource {
      * @param id unique department ID
      * @return information about the department
      */
-    DepartmentBasicDTO getDepartment(long id);
+    DepartmentDTO getDepartment(long id);
 
     /**
      * Fetches information about all available departments.
      * @return a list of department information objects
      */
-    List<DepartmentBasicDTO> getAllDepartments();
+    List<DepartmentDTO> getAllDepartments();
 }

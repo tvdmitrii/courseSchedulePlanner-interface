@@ -10,6 +10,14 @@ public class WithIdDTO {
     public WithIdDTO(){}
 
     /**
+     * Constructs DTO with ID.
+     * @param id unique ID.
+     */
+    public WithIdDTO(long id) {
+        this.id = id;
+    }
+
+    /**
      * Gets id.
      * @return the id
      */

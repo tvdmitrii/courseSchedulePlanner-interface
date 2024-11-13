@@ -1,6 +1,8 @@
 package com.turygin.api.model;
 
-public class DepartmentBasicDTO extends WithIdDTO {
+/** Represents department DTO. */
+public class DepartmentDTO extends WithIdDTO {
+
     /** Department code. */
     private String code;
 
@@ -8,17 +10,18 @@ public class DepartmentBasicDTO extends WithIdDTO {
     private String name;
 
     /** Default constructor. */
-    public DepartmentBasicDTO(){}
+    public DepartmentDTO(){
+        super();
+    }
 
     /**
-     * Instantiates DepartmentBasicDTO object.
+     * Instantiates Department DTO object.
      * @param id unique department id
      * @param code department unique code
      * @param name department name
      */
-    public DepartmentBasicDTO(long id, String code, String name) {
-        super();
-        this.id = id;
+    public DepartmentDTO(long id, String code, String name) {
+        super(id);
         this.code = code;
         this.name = name;
     }
@@ -53,5 +56,22 @@ public class DepartmentBasicDTO extends WithIdDTO {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * Creates a string representation of the instance.
+     * @return a string describing the department
+     */
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("DepartmentDTO {id=");
+        builder.append(id);
+        builder.append(", code=");
+        builder.append(code);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append("}");
+        return builder.toString();
     }
 }
