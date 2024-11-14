@@ -1,6 +1,7 @@
 package com.turygin.api.resource;
 
 import com.turygin.api.model.CourseWithSectionsDTO;
+import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface ICartResource {
      * @param userId database user ID
      * @return a list of courses and associated sections
      */
-    List<CourseWithSectionsDTO> cartGetCourses(long userId);
+    Response cartGetCourses(long userId);
 
     /**
      * Adds a new course to user's cart. None of the sections are selected by default.
@@ -20,14 +21,14 @@ public interface ICartResource {
      * @param courseId cart course ID
      * @return newly added cart course
      */
-    CourseWithSectionsDTO cartAddCourse(long userId, long courseId);
+    Response cartAddCourse(long userId, long courseId);
 
     /**
      * Removes a course from user's cart with all the associated sections.
      * @param userId database user ID
      * @param courseId cart course ID
      */
-    void cartRemoveCourse(long userId, long courseId);
+    Response cartRemoveCourse(long userId, long courseId);
 
     /**
      * Updates section selection for a course in user's cart.
@@ -36,5 +37,5 @@ public interface ICartResource {
      * @param sectionIds a list of cart section IDs that are selected
      * @return an updated cart course
      */
-    CourseWithSectionsDTO cartUpdateSections(long userId, long courseId, List<Long> sectionIds);
+    Response cartUpdateSections(long userId, long courseId, List<Long> sectionIds);
 }

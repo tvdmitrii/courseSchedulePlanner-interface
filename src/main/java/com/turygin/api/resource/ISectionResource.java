@@ -1,6 +1,7 @@
 package com.turygin.api.resource;
 
 import com.turygin.api.model.SectionDTO;
+import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
@@ -12,13 +13,13 @@ public interface ISectionResource {
      * @param courseId ID of the course
      * @return a list of all sections of the associated course
      */
-    List<SectionDTO> getAllCourseSections(long courseId);
+    Response getAllCourseSections(long courseId);
 
     /**
      * Removes a section.
      * @param sectionId section ID
      */
-    void deleteSection(long sectionId);
+    Response deleteSection(long sectionId);
 
     /**
      * Adds a new section to a course.
@@ -26,13 +27,13 @@ public interface ISectionResource {
      * @param section section object
      * @return newly added section information
      */
-    SectionDTO addSection(long courseId, SectionDTO section);
+    Response addSection(long courseId, SectionDTO section);
 
     /**
      * Updates section.
      * @param section section information, including ID
      * @return updated section information
      */
-    SectionDTO updateSection(SectionDTO section);
+    Response updateSection(SectionDTO section);
 }
 

@@ -1,6 +1,7 @@
 package com.turygin.api.resource;
 
 import com.turygin.api.model.UserDTO;
+import jakarta.ws.rs.core.Response;
 
 /** API resource interface for interacting with users. */
 public interface IUserResource {
@@ -11,6 +12,6 @@ public interface IUserResource {
      * @param uuid cognito uuid
      * @return user information
      */
-    UserDTO createUserIfNotExists(String uuid);
+    Response createUserIfNotExists(String uuid);
 }
 

@@ -1,6 +1,7 @@
 package com.turygin.api.resource;
 
 import com.turygin.api.model.DepartmentDTO;
+import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
@@ -12,11 +13,11 @@ public interface IDepartmentResource {
      * @param id unique department ID
      * @return information about the department
      */
-    DepartmentDTO getDepartment(long id);
+    Response getDepartment(long id);
 
     /**
      * Fetches information about all available departments.
      * @return a list of department information objects
      */
-    List<DepartmentDTO> getAllDepartments();
+    Response getAllDepartments();
 }
