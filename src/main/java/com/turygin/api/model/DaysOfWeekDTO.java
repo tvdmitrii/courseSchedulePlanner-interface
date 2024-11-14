@@ -1,37 +1,38 @@
 package com.turygin.api.model;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 /** Represents section meeting times. */
 public class DaysOfWeekDTO {
     /** Indicates whether the section meets on each of the 5 days. */
-    List<Boolean> daysOfWeek = new ArrayList<Boolean>(5);
+    Boolean[] daysOfWeek = new Boolean[5];
 
     /** Empty constructor. */
     public DaysOfWeekDTO() {}
 
     /**
      * Instantiates days of the week DTO object.
-     * @param daysOfWeek a list of 5 days with true for each of the selected days
+     * @param daysOfWeek an array of 5 days with true for each of the selected days
      */
-    public DaysOfWeekDTO(List<Boolean> daysOfWeek) {
+    public DaysOfWeekDTO(Boolean[] daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
     }
 
     /**
      * Gets days of week.
-     * @return days of week list
+     * @return days of week array
      */
-    public List<Boolean> getDaysOfWeek() {
+    public Boolean[] getDaysOfWeek() {
         return daysOfWeek;
     }
 
     /**
      * Sets days of week.
-     * @param daysOfWeek days of week list
+     * @param daysOfWeek days of week array
      */
-    public void setDaysOfWeek(List<Boolean> daysOfWeek) {
+    public void setDaysOfWeek(Boolean[] daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
     }
 
@@ -43,8 +44,8 @@ public class DaysOfWeekDTO {
     public String toString() {
         String[] dayNames = {"M", "Tu", "We", "Th", "F"};
         List<String> selectedDays = new ArrayList<>();
-        for(int i = 0; i < daysOfWeek.size(); i++) {
-            if(daysOfWeek.get(i)) {
+        for(int i = 0; i < daysOfWeek.length; i++) {
+            if(daysOfWeek[i]) {
                 selectedDays.add(dayNames[i]);
             }
         }
