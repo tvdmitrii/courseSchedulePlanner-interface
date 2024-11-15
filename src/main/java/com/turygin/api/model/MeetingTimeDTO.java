@@ -1,7 +1,7 @@
 package com.turygin.api.model;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 /** Represents section meeting time. */
 public class MeetingTimeDTO {
@@ -94,7 +94,7 @@ public class MeetingTimeDTO {
      * @return 24-hour time
      */
     public LocalTime getTime() {
-        int hours24 = pastNoon ? hours + 12 : hours;
+        int hours24 = (pastNoon && hours != 12) ? hours + 12 : hours;
         return LocalTime.of(hours24, minutes);
     }
 
@@ -104,7 +104,6 @@ public class MeetingTimeDTO {
      */
     @Override
     public String toString() {
-        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
-        return formatter.format(getTime());
+        return getTime().format(DateTimeFormatter.ofPattern("h:mm a"));
     }
 }

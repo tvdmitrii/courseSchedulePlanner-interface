@@ -7,7 +7,7 @@ import java.util.List;
 /** Represents section meeting times. */
 public class DaysOfWeekDTO {
     /** Indicates whether the section meets on each of the 5 days. */
-    Boolean[] daysOfWeek = new Boolean[5];
+    Boolean[] daysOfWeek = new Boolean[]{false, false, false, false, false};
 
     /** Empty constructor. */
     public DaysOfWeekDTO() {}
