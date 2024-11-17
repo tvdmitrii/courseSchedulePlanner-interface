@@ -3,7 +3,6 @@ package com.turygin.api.resource;
 import com.turygin.api.model.SectionDTO;
 import jakarta.ws.rs.core.Response;
 
-import java.util.List;
 
 /** API resource interface for interacting with sections. */
 public interface ISectionResource {

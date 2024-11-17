@@ -1,9 +1,7 @@
 package com.turygin.api.resource;
 
-import com.turygin.api.model.DepartmentDTO;
 import jakarta.ws.rs.core.Response;
 
-import java.util.List;
 
 /** API resource interface for interacting with departments. */
 public interface IDepartmentResource {

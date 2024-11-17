@@ -4,8 +4,6 @@ import com.turygin.api.model.CourseDTO;
 
 import jakarta.ws.rs.core.Response;
 
-import java.util.List;
-
 /** API resource interface for interacting with courses. */
 public interface ICourseResource {
 

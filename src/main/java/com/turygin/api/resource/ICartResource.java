@@ -1,6 +1,5 @@
 package com.turygin.api.resource;
 
-import com.turygin.api.model.CourseWithSectionsDTO;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
