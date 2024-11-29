@@ -42,6 +42,19 @@ public class SectionDTO extends WithIdDTO {
     }
 
     /**
+     * Copy constructor.
+     * @param section section DTO to make a copy of
+     */
+    public SectionDTO(SectionDTO section) {
+        super(section.getId());
+        daysOfWeek = section.daysOfWeek;
+        startTime = section.startTime;
+        endTime = section.endTime;
+        instructor = section.instructor;
+        isSelected = section.isSelected;
+    }
+
+    /**
      * Gets days of week.
      * @return the days of week
      */
