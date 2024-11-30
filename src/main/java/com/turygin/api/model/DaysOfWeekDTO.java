@@ -42,7 +42,7 @@ public class DaysOfWeekDTO {
      */
     @Override
     public String toString() {
-        String[] dayNames = {"M", "Tu", "We", "Th", "F"};
+        String[] dayNames = {"M", "Tu", "W", "Th", "F"};
         List<String> selectedDays = new ArrayList<>();
         for(int i = 0; i < daysOfWeek.length; i++) {
             if(daysOfWeek[i]) {
