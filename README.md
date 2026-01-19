@@ -1,7 +1,10 @@
 # Course Schedule Planner API Interface
 
-The project compiles class and interface definitions required by both REST API server and client into a JAR. The [Course Schedule Planner REST API](https://github.com/tvdmitrii/courseSchedulePlanner-api) project uses the JAR to implement the REST API server, while [Course Schedule Planner WebApp](https://github.com/tvdmitrii/courseSchedulePlanner-webApp) uses it to implement the client for accessing the API.
+This repository defines the shared API contracts used by both the backend REST API server and its clients. It is packaged as a standalone JAR containing DTOs and resource interface definitions, and is consumed by the [Course Schedule Planner REST API](https://github.com/tvdmitrii/courseSchedulePlanner-api) and the [Course Schedule Planner WebApp](https://github.com/tvdmitrii/courseSchedulePlanner-webApp).
+
+The interface module exists to enforce a clear separation of concerns between service implementation and API consumption, and to provide compile-time guarantees around request/response models and available endpoints. This structure helps keep backend and client components decoupled while enabling safe evolution of the API.
 
 ## Contents
-- `com.turygin.api.model` package contains DTO class definitions, for example, `CourseDTO` which contains the course information.
-- `com.turygin.api.resource` package contains repository interface definitions, for example, `ICourseRepository` which describes available endpoints for course manipulation.
+
+- `com.turygin.api.model` — DTO class definitions shared across services and clients (e.g., `CourseDTO`).
+- `com.turygin.api.resource` — Resource interface definitions describing available REST endpoints (e.g., `ICourseRepository`).
